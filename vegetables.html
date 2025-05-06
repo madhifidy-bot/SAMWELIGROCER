@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabela - Vegetables</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 2px solid #ccc;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: green;
+        }
+        .tagline {
+            font-size: 18px;
+            color: green;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: green;
+            font-weight: bold;
+        }
+        .icon {
+            font-size: 20px;
+            color: green;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        .shop-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+        .shop-item {
+            background-color: white;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .quantity {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        input[type="number"] {
+            width: 50px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+            text-align: center;
+        }
+        .order-button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .order-button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">GO GROCERY</div>
+        <div class="tagline">Delivering Groceries to your doorstep</div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="#">Order Now</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+            <i class="fas fa-search icon" onclick="alert('Search activated!')"></i>
+            <i class="fas fa-shopping-cart icon" onclick="alert('Cart activated!')"></i>
+        </nav>
+    </header>
+    <main>
+        <h1>Vegetables</h1>
+        <div class="shop-container">
+            <div class="shop-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1__Dctx6HZ17lB8Q8oGQLEyqb_QKD0Ta4GA&s" alt="Tomatoes">
+                <h2>Tomatoes</h2>
+                <div class="quantity">
+                    <input type="number" id="tomatoesQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Tomatoes', document.getElementById('tomatoesQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://freshbank.co.ke/wp-content/uploads/2020/04/images.jpg" alt="Kales">
+                <h2>Kales</h2>
+                <div class="quantity">
+                    <input type="number" id="kalesQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Kales', document.getElementById('kalesQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGbSzbkk21KpNb3qgm_ONfT2FrOUfH9HZ0uQ&s" alt="Onions">
+                <h2>Onions</h2>
+                <div class="quantity">
+                    <input type="number" id="onionsQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Onions', document.getElementById('onionsQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://www.realsimple.com/thmb/zjJYhj0AXTu8Ndio6-Hl2NzSicY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/health-benefits-of-garlic-2000-482c21fd2d154102a9b7a46ccb34e70a.jpg" alt="Garlic">
+                <h2>Garlic</h2>
+                <div class="quantity">
+                    <input type="number" id="garlicQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Garlic', document.getElementById('garlicQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://i0.wp.com/malindians.com/wp-content/uploads/2024/11/fresh-coriander-fresh-dania.png?resize=1024%2C576&ssl=1" alt="Coriander">
+                <h2>Coriander</h2>
+                <div class="quantity">
+                    <input type="number" id="corianderQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Coriander', document.getElementById('corianderQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3gEFa31hPKYJ32cKvwJncS-Z2E5tfHExj1A&s" alt="Spices">
+                <h2>Spices</h2>
+                <div class="quantity">
+                    <input type="number" id="spicesQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Spices', document.getElementById('spicesQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://www.jesmondfruitbarn.com.au/wp-content/uploads/2016/10/Jesmond-Fruit-Barn-Green-Capsicum.jpg" alt="Capsicum">
+                <h2>Capsicum</h2>
+                <div class="quantity">
+                    <input type="number" id="capsicumQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Capsicum', document.getElementById('capsicumQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://s3.ap-southeast-1.amazonaws.com/s.kalimoni-greens.com/normal-chard-spinach-kalimoniRMBK.jpg" alt="Spinach">
+                <h2>Spinach</h2>
+                <div class="quantity">
+                    <input type="number" id="spinachQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Spinach', document.getElementById('spinachQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKAk02dqF4kso7HB8nTyYFpEkG-FCUpkOQ2w&s" alt="Broccoli">
+                <h2>Broccoli</h2>
+                <div class="quantity">
+                    <input type="number" id="broccoliQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Broccoli', document.getElementById('broccoliQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://www.aprifel.com/wp-content/uploads/2019/02/fond-chou-vert.jpg" alt="Cabbage">
+                <h2>Cabbage</h2>
+                <div class="quantity">
+                    <input type="number" id="cabbageQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Cabbage', document.getElementById('cabbageQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://allianceforscience.org/wp-content/uploads/2018/02/22172931728_1223b8c407_k.jpg" alt="Eggplant">
+                <h2>Eggplant</h2>
+                <div class="quantity">
+                    <input type="number" id="eggplantQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Eggplant', document.getElementById('eggplantQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ7hTS95TtMkjTuAxHAspQGltverRM5rlqfw&s" alt="Ginger">
+                <h2>Ginger</h2>
+                <div class="quantity">
+                    <input type="number" id="gingerQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Ginger', document.getElementById('gingerQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://alphaveggies.com/wp-content/uploads/2023/07/garden-peas-1-1.jpg" alt="Peas">
+                <h2>Peas</h2>
+                <div class="quantity">
+                    <input type="number" id="peasQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Peas', document.getElementById('peasQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://cdn.mos.cms.futurecdn.net/iC7HBvohbJqExqvbKcV3pP.jpg" alt="Potatoes">
+                <h2>Potatoes</h2>
+                <div class="quantity">
+                    <input type="number" id="potatoesQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Potatoes', document.getElementById('potatoesQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtN71b-q1AJ6ZqIlYQQh2OayoT7c0BI0d5QQ&s" alt="Arrow Roots">
+                <h2>Arrow Roots</h2>
+                <div class="quantity">
+                    <input type="number" id="arrowRootsQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Arrow Roots', document.getElementById('arrowRootsQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://publish.purewow.net/wp-content/uploads/sites/2/2021/03/yam-vs-sweet-potato-what-are-yams.jpg?fit=680%2C489" alt="Yams">
+                <h2>Yams</h2>
+                <div class="quantity">
+                    <input type="number" id="yamsQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Yams', document.getElementById('yamsQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://www.verywellhealth.com/thmb/0TQR5R1VfiEe5sXQ8cMG2ppUzKo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1034036504-673c1207073b4d5ab15cc45b6f362a59.jpg" alt="Cassava">
+                <h2>Cassava</h2>
+                <div class="quantity">
+                    <input type="number" id="cassavaQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Cassava', document.getElementById('cassavaQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2WuiRH7fDnSF0A-GzrWgbqZllKTbzl8j5FQ&s" alt="Sweet Potatoes">
+                <h2>Sweet Potatoes</h2>
+                <div class="quantity">
+                    <input type="number" id="sweetPotatoesQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Sweet Potatoes', document.getElementById('sweetPotatoesQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="data:image/jpeg;base64,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" alt="Sweet Potatoes">
+                <h2>Cucumber</h2>
+                <div class="quantity">
+                    <input type="number" id="sweetPotatoesQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Sweet Potatoes', document.getElementById('sweetPotatoesQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYzyhKjGZZU2Y2XNJP-T9KQFzzrOOz6EcBjw&s" alt="Sweet Potatoes">
+                <h2>mushroom</h2>
+                <div class="quantity">
+                    <input type="number" id="sweetPotatoesQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Sweet Potatoes', document.getElementById('sweetPotatoesQty').value)">Place Order</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function placeOrder(item, qty) {
+            const url = `order_confirmation.html?item=${encodeURIComponent(item)}&qty=${encodeURIComponent(qty)}`;
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
